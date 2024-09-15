@@ -129,7 +129,6 @@ const getStats = async (req, res) => {
 
 module.exports = {
   getAllSongs,
-  getSong,
   createSong,
   deleteSong,
   updateSong,
