@@ -9,22 +9,6 @@ const getAllSongs = async (req, res) => {
 }
 
 // get a single song
-const getSong = async (req, res) => {
-  const { id } = req.params
-
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No such song'})
-  }
-
-  const getsinglesong = await Song.findById(id)
-
-  if (!getsinglesong) {
-    return res.status(404).json({error: 'No such song'})
-  }
-
-  res.status(200).json(getsinglesong)
-}
-
 // create a new song
 const createSong = async (req, res) => {
   const {title, artist, album,genre} = req.body
